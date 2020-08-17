@@ -94,10 +94,13 @@ config_file_path |  |
 
 
 Copy-pasted method of the original implementation for testing purposes; Only added Join detection   
-:param query: the query to vectorize :param min_max: dictionary of all min, max, step values for each predicate :param encoders: dictionary, which maps predicates to encoders :return: the normalized vector without cardinalities 
+
 #### Parameters
 name | description | default
 --- | --- | ---
+query: | the query to vectorize | 
+min_max: | dictionary of all min, max, step values for each predicate | 
+encoders: | dictionary, which maps predicates to encoders | 
 query |  | 
 min_max |  | 
 encoders |  | 
