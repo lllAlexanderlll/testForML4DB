@@ -35,6 +35,7 @@ jobs:
       run: |
         pydoc-markdown
         cp -avr build/docs/* docs/
+        mv docs/content/api-documentation.md docs/doc.md
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
