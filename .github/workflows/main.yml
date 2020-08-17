@@ -34,7 +34,7 @@ jobs:
     - name: Generate and Copy Documentation
       run: |
         pydoc-markdown
-        cp -avr build/docs/ docs/
+        cp -avr build/docs/* docs/
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
