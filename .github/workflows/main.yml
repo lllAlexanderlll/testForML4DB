@@ -29,10 +29,12 @@ jobs:
       run: |
         python3 -m pip install pydoc-markdown
         python3 -m pip install mkdocs
+        python3 -m pip install mkdocs-gitbook
         
     - name: Generate and Copy Documentation
       run: |
-        pydoc-markdown --render-toc 
+        pydoc-markdown --help
+        pydoc-markdown
         cp -avr build/docs/* docs/
         mv docs/content/api-documentation.md docs/doc.md
         mv docs/content/* docs/
