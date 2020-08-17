@@ -39,7 +39,7 @@ jobs:
         mv docs/content/api-documentation.md docs/doc.md
         cd docs/
         mkdocs build
-        mv docs/site/* docs/
+        mv site/* .
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
