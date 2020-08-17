@@ -30,18 +30,20 @@ Configuration options for the neural network are optionally passed via a config 
 It must contain at least the fields "loss_function", "dropout", "learning_rate", "kernel_initializer",
 "activation_strategy" and "layer".
 
-@param config: Only used if neither a model or a model_path is passed.
-    if given: It must contain at least the fields "loss_function", "dropout", "learning_rate",
-    "kernel_initializer", "activation_strategy" and "layer".
-    if not given: the config file 'config.yaml' is used for these settings.
-@param config_file_path: path for the config-file -> only necessary if no config is given
-@param data: Optional parameter for giving the data for training and testing. If given it has to be a Dict with
-    at least "x" and "y" and optionally "postgres_estimate" as keys. The values have to be numpy.ndarray. For
-    key "x" it should be the vectorized queries, for key "y" the true cardinalities in the same order and for
-    optional key "postgres_estimate" the estimates of the postgres optimizer for the query.
-@param model: Option to pass a Model which can be used.
-@param model_path: Option to pass a path to a saved model in an .h5 file.
-@param debug: Boolean whether to print additional information while processing.
+**Arguments**:
+
+- `config`: Only used if neither a model or a model_path is passed.
+if given: It must contain at least the fields "loss_function", "dropout", "learning_rate",
+"kernel_initializer", "activation_strategy" and "layer".
+if not given: the config file 'config.yaml' is used for these settings.
+- `config_file_path`: path for the config-file -> only necessary if no config is given
+- `data`: Optional parameter for giving the data for training and testing. If given it has to be a Dict with
+at least "x" and "y" and optionally "postgres_estimate" as keys. The values have to be numpy.ndarray. For
+key "x" it should be the vectorized queries, for key "y" the true cardinalities in the same order and for
+optional key "postgres_estimate" the estimates of the postgres optimizer for the query.
+- `model`: Option to pass a Model which can be used.
+- `model_path`: Option to pass a path to a saved model in an .h5 file.
+- `debug`: Boolean whether to print additional information while processing.
 
 <a name="estimator.estimator.Estimator.get_model"></a>
 #### get\_model
@@ -52,9 +54,14 @@ It must contain at least the fields "loss_function", "dropout", "learning_rate",
 
 Function for creating the model of the neural network with the information from self.config
 
-@param len_input: The size of the input vector.
-@param override: Whether an existing model should be overridden.
-@return The model for the neural network with the given properties.
+**Arguments**:
+
+- `len_input`: The size of the input vector.
+- `override`: Whether an existing model should be overridden.
+
+**Returns**:
+
+The model for the neural network with the given properties.
 
 <a name="estimator.estimator.Estimator.load_model"></a>
 #### load\_model
@@ -65,7 +72,9 @@ Function for creating the model of the neural network with the information from 
 
 Method for loading an already existing model wich was saved to file.
 
-@param model_path: Path to the file containing the model to load
+**Arguments**:
+
+- `model_path`: Path to the file containing the model to load
 
 <a name="estimator.estimator.Estimator.denormalize"></a>
 #### denormalize
@@ -75,10 +84,15 @@ Method for loading an already existing model wich was saved to file.
  | denormalize(y, y_min: float, y_max: float)
 ```
 
-@param y: tensor filled with values to denormalize
-@param y_min: minimum value for y
-@param y_max: maximum value for y
-@return tensor with denormalized values
+**Arguments**:
+
+- `y`: tensor filled with values to denormalize
+- `y_min`: minimum value for y
+- `y_max`: maximum value for y
+
+**Returns**:
+
+tensor with denormalized values
 
 <a name="estimator.estimator.Estimator.denormalize_np"></a>
 #### denormalize\_np
@@ -88,10 +102,15 @@ Method for loading an already existing model wich was saved to file.
  | denormalize_np(y: np.ndarray, y_min: float, y_max: float) -> np.ndarray
 ```
 
-@param y: numpy-array filled with values to denormalize
-@param y_min: minimum value for y
-@param y_max: maximum value for y
-@return numpy-array with denormalized values
+**Arguments**:
+
+- `y`: numpy-array filled with values to denormalize
+- `y_min`: minimum value for y
+- `y_max`: maximum value for y
+
+**Returns**:
+
+numpy-array with denormalized values
 
 <a name="estimator.estimator.Estimator.load_data_file"></a>
 #### load\_data\_file
@@ -102,9 +121,14 @@ Method for loading an already existing model wich was saved to file.
 
 Method for loading the data from file.
 
-@param file_path: Path for the file where the data is stored. Has to be a .csv or .npy file.
-@param override: Boolean whether to override already existing data.
-@return The data which is set for the Estimator.
+**Arguments**:
+
+- `file_path`: Path for the file where the data is stored. Has to be a .csv or .npy file.
+- `override`: Boolean whether to override already existing data.
+
+**Returns**:
+
+The data which is set for the Estimator.
 
 <a name="estimator.estimator.Estimator.set_data"></a>
 #### set\_data
@@ -115,8 +139,10 @@ Method for loading the data from file.
 
 Method for setting data and dependent values like max_card and input_length.
 
-@param loaded_data: The data loaded from the file.
-@param override: Boolean whether to override already existing data.
+**Arguments**:
+
+- `loaded_data`: The data loaded from the file.
+- `override`: Boolean whether to override already existing data.
 
 <a name="estimator.estimator.Estimator.split_data"></a>
 #### split\_data
@@ -127,7 +153,9 @@ Method for setting data and dependent values like max_card and input_length.
 
 Function to split the data into training- and test-set by a parameterized split value.
 
-@param split: Percentage of the data going into training set. (split=0.9 means 90% of data is training set)
+**Arguments**:
+
+- `split`: Percentage of the data going into training set. (split=0.9 means 90% of data is training set)
 
 <a name="estimator.estimator.Estimator.train"></a>
 #### train
@@ -138,16 +166,21 @@ Function to split the data into training- and test-set by a parameterized split 
 
 Method for training the before created Model.
 
-@param epochs: Number of epochs for training.
-@param verbose: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
-    epoch.
-@param shuffle: Whether to shuffle the training data -> not necessary if split was done by numpy.random.choice()
-@param batch_size: Size for the batches -> Smaller batches may be able to train the neural network better
-    (possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
-    training faster.
-@param validation_split: How much of the data should be taken as validation set -> these are taken from the
-    training data, not the test data, and are reselected for every epoch.
-@return Training history as dict.
+**Arguments**:
+
+- `epochs`: Number of epochs for training.
+- `verbose`: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
+epoch.
+- `shuffle`: Whether to shuffle the training data -> not necessary if split was done by numpy.random.choice()
+- `batch_size`: Size for the batches -> Smaller batches may be able to train the neural network better
+(possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
+training faster.
+- `validation_split`: How much of the data should be taken as validation set -> these are taken from the
+training data, not the test data, and are reselected for every epoch.
+
+**Returns**:
+
+Training history as dict.
 
 <a name="estimator.estimator.Estimator.test"></a>
 #### test
@@ -158,7 +191,9 @@ Method for training the before created Model.
 
 Let the trained neural network predict the test data.
 
-@return numpy-array containing the normalized predictions of the neural network for the test data
+**Returns**:
+
+numpy-array containing the normalized predictions of the neural network for the test data
 
 <a name="estimator.estimator.Estimator.predict"></a>
 #### predict
@@ -169,8 +204,13 @@ Let the trained neural network predict the test data.
 
 Let the trained neural network predict the given data.
 
-@param data: numpy-array containing at least one vectorized query which should be predicted
-@return numpy-array containing the normalized predictions of the neural network for the given data
+**Arguments**:
+
+- `data`: numpy-array containing at least one vectorized query which should be predicted
+
+**Returns**:
+
+numpy-array containing the normalized predictions of the neural network for the given data
 
 <a name="estimator.estimator.Estimator.run"></a>
 #### run
@@ -181,21 +221,26 @@ Let the trained neural network predict the given data.
 
 Method for a full run of the Estimator, with training and testing.
 
-@param data_file_path: Optional path to saved data file. Only necessary if no data has been set before.
-@param epochs: Number of epochs for training.
-@param verbose: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
-    epoch.
-@param shuffle: Whether to shuffle the training data -> not necessary if split was done by numpy.random.choice()
-@param batch_size: Size for the batches -> Smaller batches may be able to train the neural network better
-    (possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
-    training faster.
-@param validation_split: How much of the data should be taken as validation set -> these are taken from the
-    training data, not the test data, and are reselected for every epoch.
-@param override_model: Whether to override a probably already existing model.
-@param save_model: Whether to save the trained model to file.
-@param save_model_file_path: When save_model==True this parameter is required to give the path where the model
-    should be saved.
-@return A numpy.ndarray containing the calculated q-error.
+**Arguments**:
+
+- `data_file_path`: Optional path to saved data file. Only necessary if no data has been set before.
+- `epochs`: Number of epochs for training.
+- `verbose`: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
+epoch.
+- `shuffle`: Whether to shuffle the training data -> not necessary if split was done by numpy.random.choice()
+- `batch_size`: Size for the batches -> Smaller batches may be able to train the neural network better
+(possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
+training faster.
+- `validation_split`: How much of the data should be taken as validation set -> these are taken from the
+training data, not the test data, and are reselected for every epoch.
+- `override_model`: Whether to override a probably already existing model.
+- `save_model`: Whether to save the trained model to file.
+- `save_model_file_path`: When save_model==True this parameter is required to give the path where the model
+should be saved.
+
+**Returns**:
+
+A numpy.ndarray containing the calculated q-error.
 
 <a name="estimator.estimator.Estimator.save_model"></a>
 #### save\_model
@@ -206,8 +251,10 @@ Method for a full run of the Estimator, with training and testing.
 
 Method for saving the Model to file.
 
-@param filename: Name of the file where the model should be stored. (Without file ending. ".h5" is added to the
-    filename)
+**Arguments**:
+
+- `filename`: Name of the file where the model should be stored. (Without file ending. ".h5" is added to the
+filename)
 
 <a name="query_parser"></a>
 # query\_parser
@@ -426,16 +473,18 @@ Intitialises the Vectorizer object by defining available operators.
  | add_queries_with_cardinalities(queries_with_cardinalities_path: str)
 ```
 
-Reads CSV file with format 
-(querySetID;query;encodings;max_card;min_max_step;estimated_cardinality;true_cardinality) 
-whereas min_max_step is an array of the format 
-[[1, 2, 1], [1, 113, 1], [1878, 2115, 1]] sorted by lexicographic order of corresponding predicates and 
-encodings is an empty array if only integer values are processed. 
-For a querySetID all predicates are collected and sorted in lexicographical order to provide correct indices 
+Reads CSV file with format
+(querySetID;query;encodings;max_card;min_max_step;estimated_cardinality;true_cardinality)
+whereas min_max_step is an array of the format
+[[1, 2, 1], [1, 113, 1], [1878, 2115, 1]] sorted by lexicographic order of corresponding predicates and
+encodings is an empty array if only integer values are processed.
+For a querySetID all predicates are collected and sorted in lexicographical order to provide correct indices
 (e.g. in encodings & min_max_value) for a given predicate.
 Read queries are added to the list of vectorisation tasks.
 
-@param queries_with_cardinalities_path: path to a CSV file containing all queries and their estimated and 
+**Arguments**:
+
+- `queries_with_cardinalities_path`: path to a CSV file containing all queries and their estimated and
 true cardinalities
 
 <a name="vectorizer.vectorizer.Vectorizer.vectorize"></a>
@@ -447,8 +496,10 @@ true cardinalities
 
 Vectorizes all vectorization tasks added.
 
-@return List of np.array vectors whereas each row contains the vectorized query and appended maximal,
-     estimated and true cardinality (in this order)
+**Returns**:
+
+List of np.array vectors whereas each row contains the vectorized query and appended maximal,
+estimated and true cardinality (in this order)
 
 <a name="vectorizer.vectorizer.Vectorizer.save"></a>
 #### save
@@ -459,11 +510,13 @@ Vectorizes all vectorization tasks added.
 
 Stores the SQL query and corresponding vector at given path as NPY and TXT file.
 
-@param base_path: path to a directory for saving
-@param result_folder: name of folder to create for storing multiple files. This argument is seperated from 
-    base_path to empathize the need for an extra folder, since multiple files are saved.
-@param filename: filename without filetype. querySetID is appended for differentiation
-@param filetypes: string of file types must contain "csv" or "npy"
+**Arguments**:
+
+- `base_path`: path to a directory for saving
+- `result_folder`: name of folder to create for storing multiple files. This argument is seperated from
+base_path to empathize the need for an extra folder, since multiple files are saved.
+- `filename`: filename without filetype. querySetID is appended for differentiation
+- `filetypes`: string of file types must contain "csv" or "npy"
 
 <a name="vectorizer.vectorizer.vectorize_query_original"></a>
 #### vectorize\_query\_original
@@ -474,10 +527,15 @@ vectorize_query_original(query: str, min_max: Dict[str, Tuple[int, int, int]], e
 
 Copy-pasted method of the original implementation for testing purposes; Only added Join detection
 
-@param query: the query to vectorize
-@param min_max: dictionary of all min, max, step values for each predicate
-@param encoders: dictionary, which maps predicates to encoders
-@return the normalized vector without cardinalities
+**Arguments**:
+
+- `query`: the query to vectorize
+- `min_max`: dictionary of all min, max, step values for each predicate
+- `encoders`: dictionary, which maps predicates to encoders
+
+**Returns**:
+
+the normalized vector without cardinalities
 
 <a name="vectorizer.vectorizer.vectorizer_tests"></a>
 #### vectorizer\_tests
