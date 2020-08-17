@@ -42,7 +42,7 @@ class Vectorizer:
         (e.g. in encodings & min_max_value) for a given predicate.
         Read queries are added to the list of vectorisation tasks.
 
-        @param queries_with_cardinalities_path: path to a CSV file containing all queries and their estimated and 
+        :param queries_with_cardinalities_path: path to a CSV file containing all queries and their estimated and 
         true cardinalities 
         """
 
@@ -99,7 +99,7 @@ class Vectorizer:
         """
         Vectorizes all vectorization tasks added.
         
-        @return List of np.array vectors whereas each row contains the vectorized query and appended maximal,
+        :return: List of np.array vectors whereas each row contains the vectorized query and appended maximal,
              estimated and true cardinality (in this order) 
         """
 
@@ -136,8 +136,8 @@ class Vectorizer:
         Parses the given expression. Parsing does not rely on spaces before and after operator, since these could be 
         omitted within a query. Returns parse result: predicate, operator and value.
 
-        @param expression: an exptression of a WHERE clause (are usually seperated by AND/ OR) e.g. 'kind_id != 8'
-        @return a triple with predicate, operator and value
+        :param expression: an exptression of a WHERE clause (are usually seperated by AND/ OR) e.g. 'kind_id != 8'
+        :return: a triple with predicate, operator and value
 
         """
 
@@ -157,10 +157,10 @@ class Vectorizer:
         is avaiable for the predicate it is used.
         Normalization will result in value of range (0,1].
         
-        @param querySetID: id of the querySet to get the meta data for the given predicate
-        @param predicate: attribute of the value
-        @param value: the value to be normalized
-        @return the normalized value
+        :param querySetID: id of the querySet to get the meta data for the given predicate
+        :param predicate: attribute of the value
+        :param value: the value to be normalized
+        :return: the normalized value
         """
 
         predicate_idx = self.querySetID_meta[querySetID]["predicates"].index(predicate)
@@ -183,10 +183,10 @@ class Vectorizer:
         """
         Executes a min max normalization
         
-        @param value: the value to be normalized
-        @param max_cardinality: maximal cardinality of the query set. Its logarithm is the max value for normalization
-        @param min_value: minimal value as lower limit. Default is 0
-        @return the normalized value
+        :param value: the value to be normalized
+        :param max_cardinality: maximal cardinality of the query set. Its logarithm is the max value for normalization
+        :param min_value: minimal value as lower limit. Default is 0
+        :return: the normalized value
         """
 
         max_value = np.log(max_cardinality)
@@ -197,11 +197,11 @@ class Vectorizer:
         """
         Stores the SQL query and corresponding vector at given path as NPY and TXT file.
 
-        @param base_path: path to a directory for saving
-        @param result_folder: name of folder to create for storing multiple files. This argument is seperated from 
+        :param base_path: path to a directory for saving
+        :param result_folder: name of folder to create for storing multiple files. This argument is seperated from 
             base_path to empathize the need for an extra folder, since multiple files are saved.
-        @param filename: filename without filetype. querySetID is appended for differentiation
-        @param filetypes: string of file types must contain "csv" or "npy"
+        :param filename: filename without filetype. querySetID is appended for differentiation
+        :param filetypes: string of file types must contain "csv" or "npy"
         """
 
         assert "npy" in filetypes or  "csv" in filetypes, \
@@ -224,10 +224,10 @@ def vectorize_query_original(query: str, min_max: Dict[str, Tuple[int, int, int]
     """
     Copy-pasted method of the original implementation for testing purposes; Only added Join detection
     
-    @param query: the query to vectorize
-    @param min_max: dictionary of all min, max, step values for each predicate
-    @param encoders: dictionary, which maps predicates to encoders
-    @return the normalized vector without cardinalities
+    :param query: the query to vectorize
+    :param min_max: dictionary of all min, max, step values for each predicate
+    :param encoders: dictionary, which maps predicates to encoders
+    :return: the normalized vector without cardinalities
     """
 
     query = query.replace("NULL", "-1").replace("IS NOT", "!=").replace(";", "")
