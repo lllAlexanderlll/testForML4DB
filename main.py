@@ -96,3 +96,4 @@ if __name__ == "__main__":
     estimate(os.path.join(wd, "vectorizer_results"), os.path.join("estimator", "config.yaml"), 
                           os.path.join(wd, "model"))
 
+
