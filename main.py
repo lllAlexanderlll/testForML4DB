@@ -95,3 +95,4 @@ if __name__ == "__main__":
                            "main_py_test_vectors", "csv")
     estimate(os.path.join(wd, "vectorizer_results"), os.path.join("estimator", "config.yaml"), 
                           os.path.join(wd, "model"))
+
