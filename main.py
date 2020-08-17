@@ -11,6 +11,7 @@ from vectorizer import Vectorizer
 from query_communicator import QueryCommunicator
 
 
+
 def parse_query_file(file_path: str, save_file_path: str, inner_separator: str = None, outer_separator: str = None,
                      query_format: QueryFormat = None):
     query_parser = QueryParser()
