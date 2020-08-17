@@ -209,6 +209,191 @@ Method for saving the Model to file.
 @param filename: Name of the file where the model should be stored. (Without file ending. ".h5" is added to the
     filename)
 
+<a name=".query_parser"></a>
+# query\_parser
+
+<a name=".query_parser.query_parser"></a>
+# query\_parser.query\_parser
+
+<a name=".query_parser.query_parser.QueryParser"></a>
+## QueryParser Objects
+
+```python
+class QueryParser()
+```
+
+Class for the query_parser. This is responsible of reading a given file and return a file containing the aggregated
+information of this file.
+
+<a name=".query_parser.query_parser.QueryParser.read_file"></a>
+#### read\_file
+
+```python
+ | read_file(file_path: str, inner_separator: str = None, outer_separator: str = None, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -> Tuple[Dict, str, str, str]
+```
+
+Generic Method for reading the sql statements from a given .sql or a .csv file.
+
+**Arguments**:
+
+- `file_path`: Path to the file containing the sql statements. This path has to end with .csv or .sql. No
+other file types are supported at the moment.
+- `inner_separator`: The column separator used in the file. You can use '\t' for .tsv files. -> See
+documentation for details.
+- `outer_separator`: The block separator used in the file. -> See documentation for details.
+- `query_format`: The format of the sql query. Look at documentation of QueryFormat for details.
+:return
+
+<a name=".query_parser.query_parser.QueryParser.read_sql_file"></a>
+#### read\_sql\_file
+
+```python
+ | @staticmethod
+ | read_sql_file(file_path: str, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -> Tuple[Dict, str, str, str]
+```
+
+Read the sql statements from given sql file.
+
+**Arguments**:
+
+- `file_path`: Path to the file containing the sql statements.
+- `query_format`: The format of the sql query. Look at documentation of QueryFormat for details.
+:return
+
+<a name=".query_parser.query_parser.QueryParser.read_csv_file"></a>
+#### read\_csv\_file
+
+```python
+ | @staticmethod
+ | read_csv_file(file_path: str, inner_separator: str = ",", outer_separator: str = "#") -> Tuple[Dict, str, str, str]
+```
+
+Read the csv formatted sql statements from given file.
+
+**Arguments**:
+
+- `file_path`: Path to the file containing the sql statements formatted as csv.
+- `inner_separator`: The column separator used in the file. You can use '\t' for .tsv files. -> See
+documentation for details.
+- `outer_separator`: The block separator used in the file. -> See documentation for details.
+:return
+
+<a name=".query_parser.query_parser.QueryParser.create_solution_dict"></a>
+#### create\_solution\_dict
+
+```python
+ | create_solution_dict(command_dict: Dict[str, List[str] or List[Tuple[str, str]]], file_type: str, inner_separator: str) -> Dict[int, Dict[str, List[str or Tuple[str, str]]]]
+```
+
+Method for building the solution dict.
+
+**Arguments**:
+
+- `command_dict`: Dict with a alphabetical sorted string of the joining tables as key and a list of where
+clauses as string if the file type is sql or a list of tuples containing the join-attribute-string in first
+and the selection-attribute-string in second place.
+- `file_type`: String with 'csv'/'tsv' or 'sql' which tells the file type of the read file.
+- `inner_separator`: The column separator used in the file. You can use '\t' for .tsv files. -> See
+documentation for details.
+:return The solution dict containing 'table_names', 'join_attributes' and 'selection_attributes'.
+
+<a name=".query_parser.query_parser.QueryParser.table_name_unpacker"></a>
+#### table\_name\_unpacker
+
+```python
+ | @staticmethod
+ | table_name_unpacker(from_string: str, separator: str = ",") -> List[Tuple[str, str]]
+```
+
+Takes the sorted string of the from clause and extracts the tables with their aliases.
+
+**Arguments**:
+
+- `from_string`: Alphabetical ordered string containing all tables to join, separated by the separator.
+- `separator`: The column separator used in the file. You can use '\t' for .tsv files.
+
+**Returns**:
+
+List of tuples where the first element of the tuple is the table name and the second one is the alias.
+
+<a name=".query_parser.query_parser.QueryParser.sql_attribute_unpacker"></a>
+#### sql\_attribute\_unpacker
+
+```python
+ | sql_attribute_unpacker(where_string_list: List[str]) -> Tuple[List[str], List[str]]
+```
+
+Unpack the attribute strings from sql-file into sets containing the attributes.
+
+**Arguments**:
+
+- `where_string_list`: A list of strings from the where clauses. These have to be separated into join- and
+selection-attributes.
+
+**Returns**:
+
+A tuple containing the list of join-attributes in first and the list of selection-attributes in second
+place.
+
+<a name=".query_parser.query_parser.QueryParser.csv_attribute_unpacker"></a>
+#### csv\_attribute\_unpacker
+
+```python
+ | csv_attribute_unpacker(attribute_tuples: List[Tuple[str, str]], separator: str = ",") -> Tuple[List[str], List[str]]
+```
+
+Unpack the attribute strings from csv-file into sets containing the attributes.
+
+**Arguments**:
+
+- `attribute_tuples`: A list of tuples of strings where the first string is the string for all
+join-attributes, while the second string contains all selection-attributes.
+- `separator`: The column separator used in the file. You can use '\t' for .tsv files.
+
+**Returns**:
+
+A tuple containing the list of join-attributes in first and the list of selection-attributes in second
+place.
+
+<a name=".query_parser.query_parser.QueryParser.save_solution_dict"></a>
+#### save\_solution\_dict
+
+```python
+ | @staticmethod
+ | save_solution_dict(solution_dict: Dict[int, Dict[str, List[str or Tuple[str, str]]]], save_file_path: str = "solution_dict")
+```
+
+Save the solution to file with specified filename.
+
+**Arguments**:
+
+- `solution_dict`: The dict containing the data to save.
+- `save_file_path`: The path for the file in which the data should be saved. The .yaml ending is added
+automatically.
+
+<a name=".query_parser.query_parser.QueryParser.run"></a>
+#### run
+
+```python
+ | run(file_path: str, save_file_path: str, inner_separator: str = None, outer_separator: str = None, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -> Dict[int, Dict[str, List[str or Tuple[str, str]]]]
+```
+
+Method for the whole parsing process.
+
+**Arguments**:
+
+- `file_path`: The file to read in which the sql-statements are saved.
+- `save_file_path`: The path where to save the results.
+- `inner_separator`: The column separator used in the file. You can use '\t' for .tsv files. -> See
+documentation for details.
+- `outer_separator`: The block separator used in the file. -> See documentation for details.
+- `query_format`: The indicator for the format of the .sql query-file. If the given file is not .sql than
+this is not used.
+
+**Returns**:
+
+
+
 <a name=".vectorizer"></a>
 # vectorizer
 
