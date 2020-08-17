@@ -22,7 +22,11 @@ jobs:
 
     - name: Generate Python Docs
       uses: jbheard/markdown-docs@v1
-    
+      
+    - name: Rename docs/README.md into docs/index.md
+      run: |
+        mv docs/README.md docs/index.md
+      
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
       with:
