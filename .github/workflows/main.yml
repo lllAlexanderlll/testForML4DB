@@ -33,10 +33,11 @@ jobs:
         
     - name: Generate and Move Documentation
       run: |
+        pydoc-markdown
         cd build/docs/
         mkdocs build
         echo "build/docs/:" && ls -a
-        
+
         cd ../..        
         mv build/docs/site/* docs/
         
