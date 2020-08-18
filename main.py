@@ -1,7 +1,6 @@
 import argparse
 import os
 
-
 import numpy as np
 
 from query_parser import QueryParser, QueryFormat
