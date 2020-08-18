@@ -32,11 +32,10 @@ jobs:
         cd build/docs/
         mkdocs build
         
-        cd ../../docs/
-        rm -rf .
-        touch ".nojekyll"
-        cd ..
-        
+        cd ../..
+        rm -rf docs/
+        touch docs/.nojekyll
+
         mv build/docs/site/* docs/
         cp -avr diagrams/ docs/
       
