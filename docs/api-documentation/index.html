@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>API Documentation - My Project</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Project</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">API Documentation</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#main" class="nav-link">main</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#estimator" class="nav-link">estimator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#estimatorestimator" class="nav-link">estimator.estimator</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#estimator-objects" class="nav-link">Estimator Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_parser" class="nav-link">query_parser</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_parserquery_parser" class="nav-link">query_parser.query_parser</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#queryparser-objects" class="nav-link">QueryParser Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#database_connector" class="nav-link">database_connector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#database_connectordatabase_connector" class="nav-link">database_connector.database_connector</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#database-objects" class="nav-link">Database Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#databaseconnector-objects" class="nav-link">DatabaseConnector Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vectorizer" class="nav-link">vectorizer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vectorizervectorizer" class="nav-link">vectorizer.vectorizer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#vectorizer-objects" class="nav-link">Vectorizer Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicator" class="nav-link">query_communicator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicatorsql_generator" class="nav-link">query_communicator.sql_generator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicatorsql_generatorsql_generator" class="nav-link">query_communicator.sql_generator.sql_generator</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#sqlgenerator-objects" class="nav-link">SQLGenerator Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicatorquery_communicator" class="nav-link">query_communicator.query_communicator</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#querycommunicator-objects" class="nav-link">QueryCommunicator Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicatordatabase_evaluator" class="nav-link">query_communicator.database_evaluator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#query_communicatordatabase_evaluatordatabase_evaluator" class="nav-link">query_communicator.database_evaluator.database_evaluator</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#databaseevaluator-objects" class="nav-link">DatabaseEvaluator Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#meta_collector" class="nav-link">meta_collector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#meta_collectormeta_collector" class="nav-link">meta_collector.meta_collector</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#creationmode-objects" class="nav-link">CreationMode Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#metacollector-objects" class="nav-link">MetaCollector Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a name="main"></a></p>
+<h1 id="main">main</h1>
+<p><a name="estimator"></a></p>
+<h1 id="estimator">estimator</h1>
+<p><a name="estimator.estimator"></a></p>
+<h1 id="estimatorestimator">estimator.estimator</h1>
+<p><a name="estimator.estimator.Estimator"></a></p>
+<h2 id="estimator-objects">Estimator Objects</h2>
+<pre><code class="python">class Estimator()
+</code></pre>
+
+<p>Class containing the neural network for cardinality estimation. The specifications of the neural network can be
+changed in 'config.yaml'.</p>
+<p><a name="estimator.estimator.Estimator.__init__"></a></p>
+<h4 id="__init__">__init__</h4>
+<pre><code class="python"> | __init__(config: Dict[str, Any] = None, config_file_path: str = &quot;config.yaml&quot;, data: np.ndarray = None, model: Model = None, model_path: str = None, debug: bool = True)
+</code></pre>
+
+<p>Initializer for the Estimator.</p>
+<p>Configuration options for the neural network are optionally passed via a config dict.
+It must contain at least the fields "loss_function", "dropout", "learning_rate", "kernel_initializer",
+"activation_strategy" and "layer".</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>config</code>: Only used if neither a model or a model_path is passed.
+if given: It must contain at least the fields "loss_function", "dropout", "learning_rate",
+"kernel_initializer", "activation_strategy" and "layer".
+if not given: the config file 'config.yaml' is used for these settings.</li>
+<li><code>config_file_path</code>: path for the config-file -&gt; only necessary if no config is given</li>
+<li><code>data</code>: Optional parameter for giving the data for training and testing. If given it has to be a Dict with
+at least "x" and "y" and optionally "postgres_estimate" as keys. The values have to be numpy.ndarray. For
+key "x" it should be the vectorized queries, for key "y" the true cardinalities in the same order and for
+optional key "postgres_estimate" the estimates of the postgres optimizer for the query.</li>
+<li><code>model</code>: Option to pass a Model which can be used.</li>
+<li><code>model_path</code>: Option to pass a path to a saved model in an .h5 file.</li>
+<li><code>debug</code>: Boolean whether to print additional information while processing.</li>
+</ul>
+<p><a name="estimator.estimator.Estimator.get_model"></a></p>
+<h4 id="get_model">get_model</h4>
+<pre><code class="python"> | get_model(len_input: int, override: bool = False) -&gt; Model
+</code></pre>
+
+<p>Function for creating the model of the neural network with the information from self.config</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>len_input</code>: The size of the input vector.</li>
+<li><code>override</code>: Whether an existing model should be overridden.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>The model for the neural network with the given properties.</p>
+<p><a name="estimator.estimator.Estimator.load_model"></a></p>
+<h4 id="load_model">load_model</h4>
+<pre><code class="python"> | load_model(model_path: str)
+</code></pre>
+
+<p>Method for loading an already existing model wich was saved to file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>model_path</code>: Path to the file containing the model to load</li>
+</ul>
+<p><a name="estimator.estimator.Estimator.denormalize"></a></p>
+<h4 id="denormalize">denormalize</h4>
+<pre><code class="python"> | @staticmethod
+ | denormalize(y, y_min: float, y_max: float)
+</code></pre>
+
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>y</code>: tensor filled with values to denormalize</li>
+<li><code>y_min</code>: minimum value for y</li>
+<li><code>y_max</code>: maximum value for y</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>tensor with denormalized values</p>
+<p><a name="estimator.estimator.Estimator.denormalize_np"></a></p>
+<h4 id="denormalize_np">denormalize_np</h4>
+<pre><code class="python"> | @staticmethod
+ | denormalize_np(y: np.ndarray, y_min: float, y_max: float) -&gt; np.ndarray
+</code></pre>
+
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>y</code>: numpy-array filled with values to denormalize</li>
+<li><code>y_min</code>: minimum value for y</li>
+<li><code>y_max</code>: maximum value for y</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>numpy-array with denormalized values</p>
+<p><a name="estimator.estimator.Estimator.load_data_file"></a></p>
+<h4 id="load_data_file">load_data_file</h4>
+<pre><code class="python"> | load_data_file(file_path: str, override: bool = False) -&gt; Dict[str, np.ndarray]
+</code></pre>
+
+<p>Method for loading the data from file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: Path for the file where the data is stored. Has to be a .csv or .npy file.</li>
+<li><code>override</code>: Boolean whether to override already existing data.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>The data which is set for the Estimator.</p>
+<p><a name="estimator.estimator.Estimator.set_data"></a></p>
+<h4 id="set_data">set_data</h4>
+<pre><code class="python"> | set_data(loaded_data: np.ndarray, override: bool = False)
+</code></pre>
+
+<p>Method for setting data and dependent values like max_card and input_length.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>loaded_data</code>: The data loaded from the file.</li>
+<li><code>override</code>: Boolean whether to override already existing data.</li>
+</ul>
+<p><a name="estimator.estimator.Estimator.split_data"></a></p>
+<h4 id="split_data">split_data</h4>
+<pre><code class="python"> | split_data(split: float = 0.9)
+</code></pre>
+
+<p>Function to split the data into training- and test-set by a parameterized split value.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>split</code>: Percentage of the data going into training set. (split=0.9 means 90% of data is training set)</li>
+</ul>
+<p><a name="estimator.estimator.Estimator.train"></a></p>
+<h4 id="train">train</h4>
+<pre><code class="python"> | train(epochs: int = 100, verbose: int = 1, shuffle: bool = True, batch_size: int = 32, validation_split: float = 0.1) -&gt; Union[History, History]
+</code></pre>
+
+<p>Method for training the before created Model.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>epochs</code>: Number of epochs for training.</li>
+<li><code>verbose</code>: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
+epoch.</li>
+<li><code>shuffle</code>: Whether to shuffle the training data -&gt; not necessary if split was done by numpy.random.choice()</li>
+<li><code>batch_size</code>: Size for the batches -&gt; Smaller batches may be able to train the neural network better
+(possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
+training faster.</li>
+<li><code>validation_split</code>: How much of the data should be taken as validation set -&gt; these are taken from the
+training data, not the test data, and are reselected for every epoch.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>Training history as dict.</p>
+<p><a name="estimator.estimator.Estimator.test"></a></p>
+<h4 id="test">test</h4>
+<pre><code class="python"> | test() -&gt; np.ndarray
+</code></pre>
+
+<p>Let the trained neural network predict the test data.</p>
+<p><strong>Returns</strong>:</p>
+<p>numpy-array containing the normalized predictions of the neural network for the test data</p>
+<p><a name="estimator.estimator.Estimator.predict"></a></p>
+<h4 id="predict">predict</h4>
+<pre><code class="python"> | predict(data: np.ndarray) -&gt; np.ndarray
+</code></pre>
+
+<p>Let the trained neural network predict the given data.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>data</code>: numpy-array containing at least one vectorized query which should be predicted</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>numpy-array containing the normalized predictions of the neural network for the given data</p>
+<p><a name="estimator.estimator.Estimator.run"></a></p>
+<h4 id="run">run</h4>
+<pre><code class="python"> | run(data_file_path: str = None, epochs: int = 100, verbose: int = 1, shuffle: bool = True, batch_size: int = 32, validation_split: float = 0.1, override_model: bool = False, save_model: bool = True, save_model_file_path: str = &quot;model&quot;) -&gt; np.ndarray
+</code></pre>
+
+<p>Method for a full run of the Estimator, with training and testing.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>data_file_path</code>: Optional path to saved data file. Only necessary if no data has been set before.</li>
+<li><code>epochs</code>: Number of epochs for training.</li>
+<li><code>verbose</code>: How much information to print while training. 0 = silent, 1 = progress bar, 2 = one line per
+epoch.</li>
+<li><code>shuffle</code>: Whether to shuffle the training data -&gt; not necessary if split was done by numpy.random.choice()</li>
+<li><code>batch_size</code>: Size for the batches -&gt; Smaller batches may be able to train the neural network better
+(possibly) but enlarge training time, while bigger batches may lead to a less well trained network while
+training faster.</li>
+<li><code>validation_split</code>: How much of the data should be taken as validation set -&gt; these are taken from the
+training data, not the test data, and are reselected for every epoch.</li>
+<li><code>override_model</code>: Whether to override a probably already existing model.</li>
+<li><code>save_model</code>: Whether to save the trained model to file.</li>
+<li><code>save_model_file_path</code>: When save_model==True this parameter is required to give the path where the model
+should be saved.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>A numpy.ndarray containing the calculated q-error.</p>
+<p><a name="estimator.estimator.Estimator.save_model"></a></p>
+<h4 id="save_model">save_model</h4>
+<pre><code class="python"> | save_model(filename: str = &quot;model&quot;)
+</code></pre>
+
+<p>Method for saving the Model to file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>filename</code>: Name of the file where the model should be stored. (Without file ending. ".h5" is added to the
+filename)</li>
+</ul>
+<p><a name="query_parser"></a></p>
+<h1 id="query_parser">query_parser</h1>
+<p><a name="query_parser.query_parser"></a></p>
+<h1 id="query_parserquery_parser">query_parser.query_parser</h1>
+<p><a name="query_parser.query_parser.QueryParser"></a></p>
+<h2 id="queryparser-objects">QueryParser Objects</h2>
+<pre><code class="python">class QueryParser()
+</code></pre>
+
+<p>Class for the query_parser. This is responsible of reading a given file and return a file containing the aggregated
+information of this file.</p>
+<p><a name="query_parser.query_parser.QueryParser.read_file"></a></p>
+<h4 id="read_file">read_file</h4>
+<pre><code class="python"> | read_file(file_path: str, inner_separator: str = None, outer_separator: str = None, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -&gt; Tuple[Dict, str, str, str]
+</code></pre>
+
+<p>Generic Method for reading the sql statements from a given .sql or a .csv file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: Path to the file containing the sql statements. This path has to end with .csv or .sql. No
+other file types are supported at the moment.</li>
+<li><code>inner_separator</code>: The column separator used in the file. You can use '\t' for .tsv files. -&gt; See
+documentation for details.</li>
+<li><code>outer_separator</code>: The block separator used in the file. -&gt; See documentation for details.</li>
+<li><code>query_format</code>: The format of the sql query. Look at documentation of QueryFormat for details.
+:return</li>
+</ul>
+<p><a name="query_parser.query_parser.QueryParser.read_sql_file"></a></p>
+<h4 id="read_sql_file">read_sql_file</h4>
+<pre><code class="python"> | @staticmethod
+ | read_sql_file(file_path: str, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -&gt; Tuple[Dict, str, str, str]
+</code></pre>
+
+<p>Read the sql statements from given sql file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: Path to the file containing the sql statements.</li>
+<li><code>query_format</code>: The format of the sql query. Look at documentation of QueryFormat for details.
+:return</li>
+</ul>
+<p><a name="query_parser.query_parser.QueryParser.read_csv_file"></a></p>
+<h4 id="read_csv_file">read_csv_file</h4>
+<pre><code class="python"> | @staticmethod
+ | read_csv_file(file_path: str, inner_separator: str = &quot;,&quot;, outer_separator: str = &quot;#&quot;) -&gt; Tuple[Dict, str, str, str]
+</code></pre>
+
+<p>Read the csv formatted sql statements from given file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: Path to the file containing the sql statements formatted as csv.</li>
+<li><code>inner_separator</code>: The column separator used in the file. You can use '\t' for .tsv files. -&gt; See
+documentation for details.</li>
+<li><code>outer_separator</code>: The block separator used in the file. -&gt; See documentation for details.
+:return</li>
+</ul>
+<p><a name="query_parser.query_parser.QueryParser.create_solution_dict"></a></p>
+<h4 id="create_solution_dict">create_solution_dict</h4>
+<pre><code class="python"> | create_solution_dict(command_dict: Dict[str, List[str] or List[Tuple[str, str]]], file_type: str, inner_separator: str) -&gt; Dict[int, Dict[str, List[str or Tuple[str, str]]]]
+</code></pre>
+
+<p>Method for building the solution dict.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>command_dict</code>: Dict with a alphabetical sorted string of the joining tables as key and a list of where
+clauses as string if the file type is sql or a list of tuples containing the join-attribute-string in first
+and the selection-attribute-string in second place.</li>
+<li><code>file_type</code>: String with 'csv'/'tsv' or 'sql' which tells the file type of the read file.</li>
+<li><code>inner_separator</code>: The column separator used in the file. You can use '\t' for .tsv files. -&gt; See
+documentation for details.
+:return The solution dict containing 'table_names', 'join_attributes' and 'selection_attributes'.</li>
+</ul>
+<p><a name="query_parser.query_parser.QueryParser.table_name_unpacker"></a></p>
+<h4 id="table_name_unpacker">table_name_unpacker</h4>
+<pre><code class="python"> | @staticmethod
+ | table_name_unpacker(from_string: str, separator: str = &quot;,&quot;) -&gt; List[Tuple[str, str]]
+</code></pre>
+
+<p>Takes the sorted string of the from clause and extracts the tables with their aliases.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>from_string</code>: Alphabetical ordered string containing all tables to join, separated by the separator.</li>
+<li><code>separator</code>: The column separator used in the file. You can use '\t' for .tsv files.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>List of tuples where the first element of the tuple is the table name and the second one is the alias.</p>
+<p><a name="query_parser.query_parser.QueryParser.sql_attribute_unpacker"></a></p>
+<h4 id="sql_attribute_unpacker">sql_attribute_unpacker</h4>
+<pre><code class="python"> | sql_attribute_unpacker(where_string_list: List[str]) -&gt; Tuple[List[str], List[str]]
+</code></pre>
+
+<p>Unpack the attribute strings from sql-file into sets containing the attributes.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>where_string_list</code>: A list of strings from the where clauses. These have to be separated into join- and
+selection-attributes.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>A tuple containing the list of join-attributes in first and the list of selection-attributes in second
+place.</p>
+<p><a name="query_parser.query_parser.QueryParser.csv_attribute_unpacker"></a></p>
+<h4 id="csv_attribute_unpacker">csv_attribute_unpacker</h4>
+<pre><code class="python"> | csv_attribute_unpacker(attribute_tuples: List[Tuple[str, str]], separator: str = &quot;,&quot;) -&gt; Tuple[List[str], List[str]]
+</code></pre>
+
+<p>Unpack the attribute strings from csv-file into sets containing the attributes.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>attribute_tuples</code>: A list of tuples of strings where the first string is the string for all
+join-attributes, while the second string contains all selection-attributes.</li>
+<li><code>separator</code>: The column separator used in the file. You can use '\t' for .tsv files.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>A tuple containing the list of join-attributes in first and the list of selection-attributes in second
+place.</p>
+<p><a name="query_parser.query_parser.QueryParser.save_solution_dict"></a></p>
+<h4 id="save_solution_dict">save_solution_dict</h4>
+<pre><code class="python"> | @staticmethod
+ | save_solution_dict(solution_dict: Dict[int, Dict[str, List[str or Tuple[str, str]]]], save_file_path: str = &quot;solution_dict&quot;)
+</code></pre>
+
+<p>Save the solution to file with specified filename.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>solution_dict</code>: The dict containing the data to save.</li>
+<li><code>save_file_path</code>: The path for the file in which the data should be saved. The .yaml ending is added
+automatically.</li>
+</ul>
+<p><a name="query_parser.query_parser.QueryParser.run"></a></p>
+<h4 id="run_1">run</h4>
+<pre><code class="python"> | run(file_path: str, save_file_path: str, inner_separator: str = None, outer_separator: str = None, query_format: QueryFormat = QueryFormat.CROSS_PRODUCT) -&gt; Dict[int, Dict[str, List[str or Tuple[str, str]]]]
+</code></pre>
+
+<p>Method for the whole parsing process.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: The file to read in which the sql-statements are saved.</li>
+<li><code>save_file_path</code>: The path where to save the results.</li>
+<li><code>inner_separator</code>: The column separator used in the file. You can use '\t' for .tsv files. -&gt; See
+documentation for details.</li>
+<li><code>outer_separator</code>: The block separator used in the file. -&gt; See documentation for details.</li>
+<li><code>query_format</code>: The indicator for the format of the .sql query-file. If the given file is not .sql than
+this is not used.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="database_connector"></a></p>
+<h1 id="database_connector">database_connector</h1>
+<p><a name="database_connector.database_connector"></a></p>
+<h1 id="database_connectordatabase_connector">database_connector.database_connector</h1>
+<p><a name="database_connector.database_connector.Database"></a></p>
+<h2 id="database-objects">Database Objects</h2>
+<pre><code class="python">class Database(Enum)
+</code></pre>
+
+<p>Enum for the different supported databases. If you use MySQL, then use MARIADB as value here.</p>
+<p><a name="database_connector.database_connector.DatabaseConnector"></a></p>
+<h2 id="databaseconnector-objects">DatabaseConnector Objects</h2>
+<pre><code class="python">class DatabaseConnector()
+</code></pre>
+
+<p>Class for DatabaseConnector.</p>
+<p><a name="database_connector.database_connector.DatabaseConnector.__init__"></a></p>
+<h4 id="__init___1">__init__</h4>
+<pre><code class="python"> | __init__(database: Database, debug: bool = True)
+</code></pre>
+
+<p>Initializer for the DatabaseConnector</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>debug</code>: boolean whether to print additional information while processing</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.connect"></a></p>
+<h4 id="connect">connect</h4>
+<pre><code class="python"> | connect(config: Dict = None, config_file_path: str = None, sqlite_file_path: str = None)
+</code></pre>
+
+<p>Wrapper method for connecting to the selected database.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>config</code>: if given: It has to be a dictionary with at least db_name, user and password and optionally
+host and port (default to host: localhost, port: 5432 if not given) for PostgreSQL or it has to be a
+dictionary with at least database, user and password and optionally host and port (default to host:
+localhost, port: 3306 if not given) for MariaDB.
+if not given: The config file path is needed and used for these settings.</li>
+<li><code>config_file_path</code>: Path to the config file for PostgreSQL or MariaDB.</li>
+<li><code>sqlite_file_path</code>: Path to the SQLite database file.</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.connect_to_postgres"></a></p>
+<h4 id="connect_to_postgres">connect_to_postgres</h4>
+<pre><code class="python"> | connect_to_postgres(config: Dict = None, config_file_path: str = &quot;config.yaml&quot;)
+</code></pre>
+
+<p>Connect to the postgres database with the given config.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>config</code>: if given: it has to be a dictionary with at least db_name, user and password and optionally host
+and port (default to host: localhost, port: 5432 if not given)
+if not given: the config file 'config.yaml' is used for these settings</li>
+<li><code>config_file_path</code>: path for the config-file -&gt; only necessary if no config is given; needs to point on a
+.yaml/.yml file</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.connect_to_mariadb"></a></p>
+<h4 id="connect_to_mariadb">connect_to_mariadb</h4>
+<pre><code class="python"> | connect_to_mariadb(config: Dict = None, config_file_path: str = &quot;config.yaml&quot;)
+</code></pre>
+
+<p>Connect to the postgres database with the given config.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>config</code>: if given: it has to be a dictionary with at least db_name, user and password and optionally host
+and port (default to host: localhost, port: 3306 if not given)
+if not given: the config file 'config.yaml' is used for these settings</li>
+<li><code>config_file_path</code>: path for the config-file -&gt; only necessary if no config is given; needs to point on a
+.yaml/.yml file</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.connect_to_sqlite"></a></p>
+<h4 id="connect_to_sqlite">connect_to_sqlite</h4>
+<pre><code class="python"> | connect_to_sqlite(database_file_path: str)
+</code></pre>
+
+<p>Open connection to a sqlite database.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>database_file_path</code>: The path to the sqlite database file.</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.close_database_connection"></a></p>
+<h4 id="close_database_connection">close_database_connection</h4>
+<pre><code class="python"> | close_database_connection()
+</code></pre>
+
+<p>close  the connection to the database</p>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="database_connector.database_connector.DatabaseConnector.execute"></a></p>
+<h4 id="execute">execute</h4>
+<pre><code class="python"> | execute(sql_string: str)
+</code></pre>
+
+<p>Method for executing a SQL-Query.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>sql_string</code>: The SQL-Query to execute</li>
+</ul>
+<p><a name="database_connector.database_connector.DatabaseConnector.fetchall"></a></p>
+<h4 id="fetchall">fetchall</h4>
+<pre><code class="python"> | fetchall()
+</code></pre>
+
+<p>Wrapper for fetchall method.</p>
+<p><a name="database_connector.database_connector.DatabaseConnector.fetchone"></a></p>
+<h4 id="fetchone">fetchone</h4>
+<pre><code class="python"> | fetchone()
+</code></pre>
+
+<p>Wrapper for fetchone method.</p>
+<p><a name="vectorizer"></a></p>
+<h1 id="vectorizer">vectorizer</h1>
+<p><a name="vectorizer.vectorizer"></a></p>
+<h1 id="vectorizervectorizer">vectorizer.vectorizer</h1>
+<p><a name="vectorizer.vectorizer.Vectorizer"></a></p>
+<h2 id="vectorizer-objects">Vectorizer Objects</h2>
+<pre><code class="python">class Vectorizer()
+</code></pre>
+
+<p>Constructs a vector consisting of operator code and normalized value for each predicate in the sql query set
+with set_query method.</p>
+<p><a name="vectorizer.vectorizer.Vectorizer.__init__"></a></p>
+<h4 id="__init___2">__init__</h4>
+<pre><code class="python"> | __init__()
+</code></pre>
+
+<p>Intitialises the Vectorizer object by defining available operators.</p>
+<p><a name="vectorizer.vectorizer.Vectorizer.add_queries_with_cardinalities"></a></p>
+<h4 id="add_queries_with_cardinalities">add_queries_with_cardinalities</h4>
+<pre><code class="python"> | add_queries_with_cardinalities(queries_with_cardinalities_path: str)
+</code></pre>
+
+<p>Reads CSV file with format
+(querySetID;query;encodings;max_card;min_max_step;estimated_cardinality;true_cardinality)
+whereas min_max_step is an array of the format
+[[1, 2, 1], [1, 113, 1], [1878, 2115, 1]] sorted by lexicographic order of corresponding predicates and
+encodings is an empty array if only integer values are processed.
+For a querySetID all predicates are collected and sorted in lexicographical order to provide correct indices
+(e.g. in encodings &amp; min_max_value) for a given predicate.
+Read queries are added to the list of vectorisation tasks.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>queries_with_cardinalities_path</code>: path to a CSV file containing all queries and their estimated and
+true cardinalities</li>
+</ul>
+<p><a name="vectorizer.vectorizer.Vectorizer.vectorize"></a></p>
+<h4 id="vectorize">vectorize</h4>
+<pre><code class="python"> | vectorize() -&gt; List[np.array]
+</code></pre>
+
+<p>Vectorizes all vectorization tasks added.</p>
+<p><strong>Returns</strong>:</p>
+<p>List of np.array vectors whereas each row contains the vectorized query and appended maximal,
+estimated and true cardinality (in this order)</p>
+<p><a name="vectorizer.vectorizer.Vectorizer.save"></a></p>
+<h4 id="save">save</h4>
+<pre><code class="python"> | save(base_path: str, result_folder: str, base_filename: str, filetypes: str)
+</code></pre>
+
+<p>Stores the SQL query and corresponding vector at given path as NPY and TXT file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>base_path</code>: path to a directory for saving</li>
+<li><code>result_folder</code>: name of folder to create for storing multiple files. This argument is seperated from
+base_path to empathize the need for an extra folder, since multiple files are saved.</li>
+<li><code>filename</code>: filename without filetype. querySetID is appended for differentiation</li>
+<li><code>filetypes</code>: string of file types must contain "csv" or "npy"</li>
+</ul>
+<p><a name="vectorizer.vectorizer.vectorize_query_original"></a></p>
+<h4 id="vectorize_query_original">vectorize_query_original</h4>
+<pre><code class="python">vectorize_query_original(query: str, min_max: Dict[str, Tuple[int, int, int]], encoders: List[Dict[str, int]]) -&gt; np.array
+</code></pre>
+
+<p>Copy-pasted method of the original implementation for testing purposes; Only added Join detection</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>query</code>: the query to vectorize</li>
+<li><code>min_max</code>: dictionary of all min, max, step values for each predicate</li>
+<li><code>encoders</code>: dictionary, which maps predicates to encoders</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>the normalized vector without cardinalities</p>
+<p><a name="vectorizer.vectorizer.vectorizer_tests"></a></p>
+<h4 id="vectorizer_tests">vectorizer_tests</h4>
+<pre><code class="python">vectorizer_tests()
+</code></pre>
+
+<p>Test method to compare the original implementation with jupyter notebook output (truth) or with the Vectorizer
+implementation. Succeeds if no assertion throws an error.</p>
+<p><a name="query_communicator"></a></p>
+<h1 id="query_communicator">query_communicator</h1>
+<p><a name="query_communicator.sql_generator"></a></p>
+<h1 id="query_communicatorsql_generator">query_communicator.sql_generator</h1>
+<p><a name="query_communicator.sql_generator.sql_generator"></a></p>
+<h1 id="query_communicatorsql_generatorsql_generator">query_communicator.sql_generator.sql_generator</h1>
+<p><a name="query_communicator.sql_generator.sql_generator.SQLGenerator"></a></p>
+<h2 id="sqlgenerator-objects">SQLGenerator Objects</h2>
+<pre><code class="python">class SQLGenerator()
+</code></pre>
+
+<p>Class for generating SQL queries. Uses Meta Information from MetaCollector Step before.</p>
+<p><a name="query_communicator.sql_generator.sql_generator.SQLGenerator.__init__"></a></p>
+<h4 id="__init___3">__init__</h4>
+<pre><code class="python"> | __init__(config: str = None, debug: bool = False)
+</code></pre>
+
+<p>Initializer of the SQL Generator. Reads the needed parameters from the meta-information.yaml generated from the
+MetaCollector which was possibly executed before.</p>
+<p>It's also possible to pass an own meta.yaml file to skip the metaCollector Step.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>config</code>: Config file which contains columns with their datatypes, tables, join_attributes, encodings,
+maximum cardinality
+min and max values of the columns with the step size.
+If None: meta-information.yaml generated from MetaCollector is used</li>
+</ul>
+<p><a name="query_communicator.sql_generator.sql_generator.SQLGenerator.write_sql"></a></p>
+<h4 id="write_sql">write_sql</h4>
+<pre><code class="python"> | @staticmethod
+ | write_sql(queries: List[Tuple[int, str]], file: str)
+</code></pre>
+
+<p>Function for writing a human readable sql file with the generated queries</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>queries</code>: list of queries, containing querySetID and query as tuple</li>
+<li><code>file</code>: file name for sql file</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="query_communicator.sql_generator.sql_generator.SQLGenerator.random_operator_value"></a></p>
+<h4 id="random_operator_value">random_operator_value</h4>
+<pre><code class="python"> | @staticmethod
+ | random_operator_value(range: List[int], val_type: str, encoding: dict = None) -&gt; Tuple[str, str or int]
+</code></pre>
+
+<p>Function for random operator and value creation from a list of allowed operators and a range of values</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>range</code>: Min_max Value range and stepsize of a given column from meta_information</li>
+<li><code>val_type</code>: Type of column, can be either integer or enumeration. when enumeration, then an encoding dict has to be given</li>
+<li><code>encoding</code>: Encoding of the possible values for the column</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>Tuple consisting of operator and value as string or int</p>
+<p><a name="query_communicator.sql_generator.sql_generator.SQLGenerator.generate_queries"></a></p>
+<h4 id="generate_queries">generate_queries</h4>
+<pre><code class="python"> | generate_queries(qnumber: int = 10, save_readable: str = 'queries')
+</code></pre>
+
+<p>Generates given number of SQL Queries with given meta-information.
+Function, which models the hole process of query generation</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>self</code>: </li>
+<li><code>save_readable</code>: Saves the generated SQL queries into a human friendly readable .sql file</li>
+<li><code>qnumber</code>: Number of generated queries per meta-entry</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>list with queries as String</p>
+<p><a name="query_communicator.query_communicator"></a></p>
+<h1 id="query_communicatorquery_communicator">query_communicator.query_communicator</h1>
+<p><a name="query_communicator.query_communicator.QueryCommunicator"></a></p>
+<h2 id="querycommunicator-objects">QueryCommunicator Objects</h2>
+<pre><code class="python">class QueryCommunicator()
+</code></pre>
+
+<p>Class for oberserving the generation and evaluation of queries, in order to have
+nullqueryfree set of queries if needed.
+Manages the communication between Evaluator and SQL Generator
+to get the required amount of queries if possible.
+The SQL_Generator itself is not able to find nullqueries, that are caused by a valid combination of attributes,
+which just don't match any data of the database.
+Vice Versa, the Evaluator is not able to generate new queries, if there are nullqueries.</p>
+<p><a name="query_communicator.query_communicator.QueryCommunicator.get_queries"></a></p>
+<h4 id="get_queries">get_queries</h4>
+<pre><code class="python"> | get_queries(database_connector: DatabaseConnector, save_file_path: str, query_number: int)
+</code></pre>
+
+<p>Function for generating queries and their cardinalities if nullqueries are allowed.
+Saves generated queries in ../assets/queries_with_cardinalities.csv</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>query_number</code>: number of queries to generate</li>
+<li><code>save_file_path</code>: path to save the finished queries with their cardinalities</li>
+<li><code>database_connector</code>: Handles the database connection to the desired database.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="query_communicator.query_communicator.QueryCommunicator.get_nullfree_queries"></a></p>
+<h4 id="get_nullfree_queries">get_nullfree_queries</h4>
+<pre><code class="python"> | get_nullfree_queries(query_number: int, save_file_path: str, database_connector: DatabaseConnector)
+</code></pre>
+
+<p>Function that generates given number queries and their cardinalities which are not zero.
+There will be less queries then requested, if unavoidable.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>query_number</code>: number of queries to generate</li>
+<li><code>save_file_path</code>: path to save the finished queries with their cardinalities</li>
+<li><code>database_connector</code>: Handles the database connection to the desired database.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>list of remained Queries</p>
+<p><a name="query_communicator.query_communicator.QueryCommunicator.reduce_queries"></a></p>
+<h4 id="reduce_queries">reduce_queries</h4>
+<pre><code class="python"> | @staticmethod
+ | reduce_queries(query_number: int, save_file_path: str) -&gt; List
+</code></pre>
+
+<p>Reduces genrated queries to the requested number of queries</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>query_number</code>: number of queries to generate</li>
+<li><code>save_file_path</code>: path to save the finished queries with their cardinalities</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>DataFrame with reduced query sets</p>
+<p><a name="query_communicator.query_communicator.QueryCommunicator.write_queries"></a></p>
+<h4 id="write_queries">write_queries</h4>
+<pre><code class="python"> | @staticmethod
+ | write_queries(queries: List, save_file_path: str = 'assets/reduced_queries_with_cardinalities.csv')
+</code></pre>
+
+<p>function for writing the csv file with the reduced queries</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>queries</code>: list of queries to write in a csv file</li>
+<li><code>save_file_path</code>: file path, where to save the file</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="query_communicator.query_communicator.QueryCommunicator.produce_queries"></a></p>
+<h4 id="produce_queries">produce_queries</h4>
+<pre><code class="python"> | produce_queries(database_connector: DatabaseConnector, query_number: int = 10, nullqueries: bool = False, save_file_path: str = 'assets/reduced_queries_with_cardinalities.csv')
+</code></pre>
+
+<p>Main function to produce the queries and return the correct csv file,
+depending if nullqueries are wanted or not</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>save_file_path</code>: Path to save the finished query file</li>
+<li><code>nullqueries</code>: decide whether to generate nullqueries or not, default: no nullqueries</li>
+<li><code>query_number</code>: count of queries that are generated per meta file entry</li>
+<li><code>database_connector</code>: Connector for the database connection, depending on the database system you are using</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="query_communicator.database_evaluator"></a></p>
+<h1 id="query_communicatordatabase_evaluator">query_communicator.database_evaluator</h1>
+<p><a name="query_communicator.database_evaluator.database_evaluator"></a></p>
+<h1 id="query_communicatordatabase_evaluatordatabase_evaluator">query_communicator.database_evaluator.database_evaluator</h1>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator"></a></p>
+<h2 id="databaseevaluator-objects">DatabaseEvaluator Objects</h2>
+<pre><code class="python">class DatabaseEvaluator()
+</code></pre>
+
+<p>Class for DatabaseEvaluator. Using psycopg2 to establish a connection to the postgres database.
+Evaluate true and estimated cardinalities from q given query list and save them.</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.__init__"></a></p>
+<h4 id="__init___4">__init__</h4>
+<pre><code class="python"> | __init__(database_connector: DatabaseConnector, debug: bool = True, input_file_name: str = 'queries.csv')
+</code></pre>
+
+<p>Initializer for the DatabaseEvaluator</p>
+<p>Configuration options for the database are optionally passed via a config dict.
+It must contain at least the dbname, the username and the password.
+Additionally the host and the port can be given if there not default (host: localhost, port: 5432).</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>debug</code>: boolean whether to print additional information while processing</li>
+<li><code>input_file_name</code>: name of the file used for the sql query import, have to be .csv or .sql and located in
+the asset folder</li>
+<li><code>database_connector</code>: Handles the database connection to the desired database.</li>
+</ul>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.import_sql_queries"></a></p>
+<h4 id="import_sql_queries">import_sql_queries</h4>
+<pre><code class="python"> | import_sql_queries(path)
+</code></pre>
+
+<p>load the queries from sql or csv file, wich is provided by the sql_generator submodule</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>path</code>: path to the file with the given queries (per default in asset folder), relative to the
+database_evaluator folder</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.generate_explain_queries"></a></p>
+<h4 id="generate_explain_queries">generate_explain_queries</h4>
+<pre><code class="python"> | generate_explain_queries()
+</code></pre>
+
+<p>generate EXPLAIN sql statements for cardinality estimation</p>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.get_true_cardinalities"></a></p>
+<h4 id="get_true_cardinalities">get_true_cardinalities</h4>
+<pre><code class="python"> | get_true_cardinalities()
+</code></pre>
+
+<p>execute the given queries against the database and calculate the true cardinality from each query</p>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.get_estimated_cardinalities"></a></p>
+<h4 id="get_estimated_cardinalities">get_estimated_cardinalities</h4>
+<pre><code class="python"> | get_estimated_cardinalities()
+</code></pre>
+
+<p>execute the adapted queries against the database and calculate the postgres cardinality estimation for each query</p>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.save_cardinalities"></a></p>
+<h4 id="save_cardinalities">save_cardinalities</h4>
+<pre><code class="python"> | save_cardinalities(save_readable: Tuple[bool, str] = (True, 'assets/queries_with_cardinalities.txt'), save_file_path: str = 'assets/queries_with_cardinalities.csv', eliminate_null_queries: bool = True)
+</code></pre>
+
+<p>execute the adapted queries against the database and calculate the postgres cardinality estimation for each
+query</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>eliminate_null_queries</code>: if True only queries with true cardinality &gt; 0 will be saved</li>
+<li><code>save_readable</code>: if True: save queries and corresponing cardinalities human readable in an separate text
+file, per default as assets/queries_with_cardinalities.txt</li>
+<li><code>save_file_path</code>: path to save the finished queries with their cardinalities</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="query_communicator.database_evaluator.database_evaluator.DatabaseEvaluator.get_cardinalities"></a></p>
+<h4 id="get_cardinalities">get_cardinalities</h4>
+<pre><code class="python"> | get_cardinalities(eliminate_null_queries: bool = True, save_file_path: str = 'assets/queries_with_cardinalities.csv')
+</code></pre>
+
+<p>function that manage the whole process of cardinality estimation/calculation</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>eliminate_null_queries</code>: if True only queries with true cardinality &gt; 0 will be saved</li>
+<li><code>save_file_path</code>: path to save the finished queries with their cardinalities</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>void</p>
+<p><a name="meta_collector"></a></p>
+<h1 id="meta_collector">meta_collector</h1>
+<p><a name="meta_collector.meta_collector"></a></p>
+<h1 id="meta_collectormeta_collector">meta_collector.meta_collector</h1>
+<p><a name="meta_collector.meta_collector.CreationMode"></a></p>
+<h2 id="creationmode-objects">CreationMode Objects</h2>
+<pre><code class="python">class CreationMode(Enum)
+</code></pre>
+
+<p>Enum for the different possibilities to use the MetaCollector.</p>
+<p>0 -&gt; don't create table, 1 -&gt; create temporary table, 2 -&gt; create permanent table</p>
+<p><a name="meta_collector.meta_collector.MetaCollector"></a></p>
+<h2 id="metacollector-objects">MetaCollector Objects</h2>
+<pre><code class="python">class MetaCollector()
+</code></pre>
+
+<p>Class for MetaCollector.</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.__init__"></a></p>
+<h4 id="__init___5">__init__</h4>
+<pre><code class="python"> | __init__(database_connector: DatabaseConnector, debug: bool = True)
+</code></pre>
+
+<p>Initializer for the MetaCollector</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>database_connector</code>: The connector to the used database.</li>
+<li><code>debug</code>: boolean whether to print additional information while processing</li>
+</ul>
+<p><a name="meta_collector.meta_collector.MetaCollector.get_columns_data_postgres"></a></p>
+<h4 id="get_columns_data_postgres">get_columns_data_postgres</h4>
+<pre><code class="python"> | get_columns_data_postgres(table_names: List[str or Tuple[str, str]], columns: List[str]) -&gt; List[Tuple[str, str, str, Tuple[int, int, int], Dict[str, LabelEncoder], str]]
+</code></pre>
+
+<p>Get column-name and datatype for the requested columns of the corresponding tables for PostgreSQL and MariaDB.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>table_names</code>: List of names of tables, as strings or tuples containing table-name in first and alias in
+second place, to join.</li>
+<li><code>columns</code>: Columns to project on.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>A list containing the name of the column, the table alias (if existent, else the table-name), the
+data-type of the column, the tuple containing min value, max value and step size, the encodings if datatype
+is not int and the alternative column-name if the original one occurs more than once.</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.get_columns_data_sqlite"></a></p>
+<h4 id="get_columns_data_sqlite">get_columns_data_sqlite</h4>
+<pre><code class="python"> | get_columns_data_sqlite(table_names: List[str or Tuple[str, str]], columns: List[str]) -&gt; List[Tuple[str, str, str, Tuple[int, int, int], Dict[str, LabelEncoder], str]]
+</code></pre>
+
+<p>Get column-name and datatype for the requested columns of the corresponding tables for SQLite.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>table_names</code>: List of names of tables, as strings or tuples containing table-name in first and alias in
+second place, to join.</li>
+<li><code>columns</code>: Columns to project on.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>A list containing the name of the column, the table alias (if existent, else the table-name), the
+data-type of the column, the tuple containing min value, max value and step size, the encodings if datatype
+is not int and the alternative column-name if the original one occurs more than once.</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.collect_min_max_step"></a></p>
+<h4 id="collect_min_max_step">collect_min_max_step</h4>
+<pre><code class="python"> | collect_min_max_step(tablename: str, column: Tuple[str, str]) -&gt; (Tuple[int, int, int], Dict)
+</code></pre>
+
+<p>After collecting the datatype information for the columns this function returns the min and max values for the
+meta-table and the encoders.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>tablename</code>: String containing the name of the table where to find the column</li>
+<li><code>column</code>: a tuple containing the name and the datatype for the column, each as string</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>first: dictionary with the attribute-name as key and a tuple containing min-value, max-value and
+step-size (all as int) as value
+second: a dictionary of the not integer encoders with key attribute-name and value the encoder</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.get_max_card"></a></p>
+<h4 id="get_max_card">get_max_card</h4>
+<pre><code class="python"> | get_max_card(table_names: List[str or Tuple[str, str]], join_atts: List[str or Tuple[str, str]] = None) -&gt; int
+</code></pre>
+
+<p>Get the size of the join-table without any selections, the so called max-card.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>table_names</code>: List of names of tables, as strings or tuples containing table-name in first and alias in
+second place, to join.</li>
+<li><code>join_atts</code>: List of attributes, as strings or tuples containing the two attributes to join with '=', to
+join the tables on. -&gt; is optional, because there is no join if there is only one table and so there would
+be no join-attribute needed in that case</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.setup_view"></a></p>
+<h4 id="setup_view">setup_view</h4>
+<pre><code class="python"> | setup_view(table_names: List[str or Tuple[str, str]], columns_types: List[Tuple], join_atts: List[str or Tuple[str, str]] = None, cube: bool = False, mode: CreationMode = CreationMode.NONE) -&gt; (List[Tuple[str, str]], int)
+</code></pre>
+
+<p>Create the tables tmpview and if cube==True also tmpview_cube containing the metadata for the given tables
+joined on the attributes and projected on the columns.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>table_names</code>: List of names of tables, as strings or tuples containing table-name in first and alias in
+second place, to join.</li>
+<li><code>columns_types</code>: columns to project on</li>
+<li><code>join_atts</code>: List of attributes, as strings or tuples containing the two attributes to join with '=', to
+join the tables on. -&gt; is optional, because there is no join if there is only one table and so there would
+be no join-attribute needed in that case</li>
+<li><code>cube</code>: boolean whether to create the *_cube table, too</li>
+<li><code>mode</code>: see CreationMode-Enum</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>first: a list of tuples containing the name and the datatype for the columns, each as string
+second: the maximal cardinality as integer</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.setup_cube_view"></a></p>
+<h4 id="setup_cube_view">setup_cube_view</h4>
+<pre><code class="python"> | setup_cube_view(new_table_name: str, columns)
+</code></pre>
+
+<p>Create the table tmpview_cube if cube==True containing the metadata for the given tables joined on the
+attributes and projected on the columns.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>new_table_name</code>: The name of the before created table.</li>
+<li><code>columns</code>: Columns to project on.</li>
+</ul>
+<p><a name="meta_collector.meta_collector.MetaCollector.get_meta"></a></p>
+<h4 id="get_meta">get_meta</h4>
+<pre><code class="python"> | get_meta(table_names: List[str or Tuple[str, str]], columns: List[str], join_atts: List[str or Tuple[str, str]] = None, mode: CreationMode = CreationMode.NONE, save: bool = True, save_file_name: str = None, batchmode: bool = False, cube: bool = False) -&gt; Dict
+</code></pre>
+
+<p>Method for the whole process of collecting the meta-information for the given tables joined on the given
+attributes and projected on the given columns.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>table_names</code>: List of names of tables, as strings or tuples containing table-name in first and alias in
+second place, to join.</li>
+<li><code>columns</code>: List of names of columns, as strings, to project on.</li>
+<li><code>join_atts</code>: List of attributes, as strings or tuples containing the two attributes to join with '=', to
+join the tables on. -&gt; is optional, because there is no join if there is only one table and so there would
+be no join-attribute needed in that case</li>
+<li><code>save</code>: boolean whether to save the meta-information to file</li>
+<li><code>save_file_name</code>: name for the save-file for the meta_information -&gt; not needed if save==False</li>
+<li><code>batchmode</code>: whether the meta data is collected in batches or not -&gt; connection to db held open if batch
+mode</li>
+<li><code>mode</code>: see CreationMode-Enum</li>
+<li><code>cube</code>: Whether to create the _cube table additionally (only for CreationMode Temporary or Permanent).</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>dictionary containing the meta-information</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.get_meta_from_file"></a></p>
+<h4 id="get_meta_from_file">get_meta_from_file</h4>
+<pre><code class="python"> | get_meta_from_file(file_path: str, save: bool = True, save_file_path: str = None, mode: CreationMode = CreationMode.NONE, override: bool = True) -&gt; Dict[int, any]
+</code></pre>
+
+<p>Method for collecting meta data for the information given in a file from QueryParser or at least a file formatted
+like this.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>file_path</code>: Path to the file. Format has to be the same like the output of QueryParser</li>
+<li><code>save</code>: Whether to save the information to file or not. -&gt; It is recommended to do so.</li>
+<li><code>save_file_path</code>: Optional path for the save-file.</li>
+<li><code>mode</code>: see CreationMode-Enum</li>
+<li><code>override</code>: Whether to override an already existing meta_information file.</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<p>The solution dict.</p>
+<p><a name="meta_collector.meta_collector.MetaCollector.save_meta"></a></p>
+<h4 id="save_meta">save_meta</h4>
+<pre><code class="python"> | save_meta(meta_dict: Dict, file_name: str = &quot;meta_information&quot;, mode: str = &quot;w&quot;)
+</code></pre>
+
+<p>Method for saving the meta-information to file.</p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code>meta_dict</code>: the dictionary containing the meta-information to save</li>
+<li><code>file_name</code>: the name (without file-type) for the save-file</li>
+<li><code>mode</code>: The mode to open the file. Some common possibilities are 'w', 'w+', 'r', 'a', 'a+'</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
