@@ -1,6 +1,6 @@
 # Before trtiggering this action, be sure to run the following once locally and push the created files
 # pydoc-markdown --bootstrap mkdocs
-# pydoc-markdown --bootstrap readthedocs
+# pydoc-markdown --bootstrap git
 name: Generate markdown in docs folder
 
 on:
@@ -35,8 +35,7 @@ jobs:
         mkdocs build
         
         cd ../..
-        rm -rf docs/
-        mkdir docs
+        rm -rf docs/*
         touch docs/.nojekyll
 
         mv build/docs/site/* docs/
