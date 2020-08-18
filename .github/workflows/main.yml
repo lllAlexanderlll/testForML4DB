@@ -35,8 +35,12 @@ jobs:
       run: |
         cd build/docs/
         mkdocs build
+        ls -a
         cd ../..
+        ls -a
         mv build/docs/site/* docs/
+        cd docs/
+        ls -a
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
