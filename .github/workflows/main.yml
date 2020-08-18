@@ -1,4 +1,6 @@
-# Before trtiggering this action, be sure to 
+# Before trtiggering this action, be sure to run the following once locally and push the created files
+# pydoc-markdown --bootstrap mkdocs
+# pydoc-markdown --bootstrap readthedocs
 name: Generate markdown in docs folder
 
 on:
@@ -25,8 +27,6 @@ jobs:
         
     - name: Generate and Move Documentation
       run: |
-        pydoc-markdown --bootstrap mkdocs
-        pydoc-markdown --bootstrap readthedocs
         pydoc-markdown
         
         cd build/docs/
