@@ -1,0 +1,30 @@
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id<=2 AND t.production_year>1916 171733394 131626071
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id>=1 AND t.production_year=1946 98164 364886
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id<=1 AND t.production_year!=2006 70273125 91787860
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id<=1 AND t.production_year>2005 40887471 33816950
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id=1 AND t.production_year!=1955 72281073 94149936
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id<=2 AND t.production_year=2096 98164 0
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id>=1 AND t.production_year>=2053 1012 30
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id<=1 AND t.production_year!=1987 71914586 93379336
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id!=1 AND t.production_year>=2093 595 30
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id=2 AND t.production_year<=1916 2303144 1011277
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id>=1 AND t.production_year<=2009 100000707 99219147
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id>=2 AND t.production_year>1956 97067587 36009368
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id=1 AND t.production_year=2109 40480 0
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id>=2 AND t.production_year>2084 595 30
+SELECT COUNT(*) FROM movie_companies mc,movie_info_idx mi_idx,title t WHERE t.id=mc.movie_id AND t.id=mi_idx.movie_id AND mc.company_type_id=1 AND t.production_year<1973 8818542 17266327
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id<=2 AND mk.keyword_id>68570 AND t.production_year<=2068 4246904 5856814
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id>1 AND mk.keyword_id<=197791 AND t.production_year<2099 25743857 14353987
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id=2 AND mk.keyword_id=172436 AND t.production_year!=2003 1210 1
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=2 AND mk.keyword_id!=193392 AND t.production_year!=2019 18185706 48503262
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id=1 AND mk.keyword_id<12301 AND t.production_year!=1950 11272500 29866606
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id>=2 AND mk.keyword_id<=127583 AND t.production_year=1977 119593 66020
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=2 AND mk.keyword_id<=202907 AND t.production_year>2052 104 0
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=1 AND mk.keyword_id!=228834 AND t.production_year>=2073 149 3
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=2 AND mk.keyword_id!=27633 AND t.production_year!=1932 18185706 48422543
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id>=1 AND mk.keyword_id!=36033 AND t.production_year<=2043 44125221 62978305
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=1 AND mk.keyword_id!=137693 AND t.production_year>1992 19839346 10762789
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id>1 AND mk.keyword_id<=18225 AND t.production_year!=1983 18393819 10235605
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=1 AND mk.keyword_id!=73456 AND t.production_year>=1879 25929450 14473627
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id<2 AND mk.keyword_id>221250 AND t.production_year!=1927 51882 190184
+SELECT COUNT(*) FROM movie_companies mc,movie_keyword mk,title t WHERE t.id=mc.movie_id AND t.id=mk.movie_id AND mc.company_type_id!=2 AND mk.keyword_id=16971 AND t.production_year>=2023 1 0

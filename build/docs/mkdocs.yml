@@ -1,8 +1,24 @@
 docs_dir: content
-mkdocs_config:
-  site_name: My Project
-  theme: readthedocs
 nav:
 - Home: index.md
-- API Documentation: api-documentation.md
-site_name: My Project
+- Crawler:
+  - Crawler Class: crawler/crawler-class.md
+  - Crawler Readme: crawler/crawler-readme.md
+- Meta-Collector:
+  - Meta-Collector Class: meta-collector/meta-collector-class.md
+  - Meta-Collector Readme: meta-collector/meta-collector-readme.md
+- SQL-Generator:
+  - SQL-Generator Class: sql-generator/sql-generator-class.md
+  - SQL-Generator Readme: sql-generator/sql-generator-readme.md
+- Postgres-Evaluator:
+  - Postgres-Evaluator Class: postgres-evaluator/postgres-evaluator-class.md
+  - Postgres-Evaluator Readme: postgres-evaluator/postgres-evaluator-readme.md
+- Vectorizer:
+  - Vectorizer Class: vectorizer/vectorizer-class.md
+  - Vectorizer Readme: vectorizer/vectorizer-readme.md
+- Estimator:
+  - Estimator Class: estimator/estimator-class.md
+  - Estimator Readme: estimator/estimator-readme.md
+repo_url: https://gitlab.hrz.tu-chemnitz.de/ddsg/ml4sys/local-cardinality-estimation
+site_name: Local Cardinality Estimation
+theme: gitbook

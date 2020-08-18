@@ -1,7 +1,5 @@
 # Local Cardinality Estimation
 
-[Documentation](https://lllalexanderlll.github.io/testForML4DB/doc.html)
-
 KP SS2020
 
 - The submodule 'meta-collector' collects the several informations from the requested table and saves the information into a .json file
