@@ -34,6 +34,7 @@ jobs:
         
         cd ../..
         rm -rf docs/
+        mkdir docs
         touch docs/.nojekyll
 
         mv build/docs/site/* docs/
