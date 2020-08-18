@@ -29,6 +29,7 @@ jobs:
       run: |
         pydoc-markdown
         
+        cp -avr diagrams/ build/docs/content/
         cd build/docs/
         echo "" & echo "mkdocs.yml:" && cat mkdocs.yml
         mkdocs build
@@ -39,7 +40,7 @@ jobs:
         touch docs/.nojekyll
 
         mv build/docs/site/* docs/
-        cp -avr diagrams/ docs/
+        
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
