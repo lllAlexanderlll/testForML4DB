@@ -28,15 +28,13 @@ jobs:
         pydoc-markdown --bootstrap mkdocs
         pydoc-markdown --bootstrap readthedocs
         pydoc-markdown
+        
         cd build/docs/
         mkdocs build
-        echo "build/docs/:" && ls -a
-
+        
         cd ../..        
         mv build/docs/site/* docs/
-        
-        cd docs/
-        echo "docs/:" && ls -a
+        cp -avr diagrams/ docs/
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
