@@ -14,6 +14,7 @@ renderer:
       contents:
         - '*'
   mkdocs_config:
-    mkdocs_config:
-      site_name: My Project
-      theme: readthedocs
+    site_name: Local Cardinality Estimation
+    repo_url: https://gitlab.hrz.tu-chemnitz.de/ddsg/ml4sys/local-cardinality-estimation
+    theme: gitbook
+
