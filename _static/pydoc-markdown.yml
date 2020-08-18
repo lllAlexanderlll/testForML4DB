@@ -1,0 +1,20 @@
+loaders:
+  - type: python
+processors:
+  - type: filter
+  - type: smart
+  - type: crossref
+renderer:
+  type: mkdocs
+  pages:
+    - title: Home
+      name: index
+      source: README.md
+    - title: API Documentation
+      contents:
+        - '*'
+  mkdocs_config:
+    site_name: Local Cardinality Estimation
+    repo_url: https://gitlab.hrz.tu-chemnitz.de/ddsg/ml4sys/local-cardinality-estimation
+    theme: gitbook
+
