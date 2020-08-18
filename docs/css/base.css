@@ -146,10 +146,6 @@ footer {
     overflow-y: auto;
 }
 
-.nav-link{
-    word-break: break-word;
-}
-
 /* Toggle (vertically flip) sidebar collapse icon */
 .bs-sidebar .navbar-toggler span {
     -moz-transform: scale(1, -1);
