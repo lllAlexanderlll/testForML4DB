@@ -31,15 +31,12 @@ jobs:
         python3 -m pip install mkdocs
         python3 -m pip install mkdocs-gitbook
         
-    - name: Generate and Copy Documentation
+    - name: Generate and Move Documentation
       run: |
-        pydoc-markdown --help
-        pydoc-markdown
-        cp -avr build/docs/* docs/
-        mv docs/content/api-documentation.md docs/doc.md
-        cd docs/
+        cd build/docs/
         mkdocs build
-        mv site/* .
+        cd ../..
+        mv build/docs/site/* docs/
       
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
