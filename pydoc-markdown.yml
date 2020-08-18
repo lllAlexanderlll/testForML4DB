@@ -40,12 +40,12 @@ renderer:
               contents:
                 - database_evaluator.database_evaluator.*
             - title: DatabaseEvaluator Readme
-              source: database_evaluator/README.md
+              source: query_communicator/database_evaluator/README.md
             - title: SQLGenerator Class
               contents:
                 - sqlgenerator.sqlgenerator.*
             - title: SQLGenerator Readme
-              source: sqlgenerator/README.md
+              source: query_communicator/sql_generator/README.md
         
 
 
