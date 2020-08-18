@@ -30,6 +30,7 @@ jobs:
         pydoc-markdown
         
         cd build/docs/
+        echo "" & echo "mkdocs.yml:" && cat mkdocs.yml
         mkdocs build
         
         cd ../..
